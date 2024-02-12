@@ -88,8 +88,8 @@ mkdir smthandroid/native/lib
 mkdir smthandroid/native/lib/android
 cp -R smthandroid/lib/net8.0-android34.0/*.aar smthandroid/native/lib/android
 
-rm ${smth}android/lib/net8.0-android34.0/*.aar
-rm ${smth}android/lib/net7.0-android33.0/*.aar 
+rm smthandroid/lib/net8.0-android34.0/*.aar
+rm smthandroid/lib/net7.0-android33.0/*.aar 
 
 
 

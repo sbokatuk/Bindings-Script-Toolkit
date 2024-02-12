@@ -20,10 +20,12 @@
     </dependencies>
   </metadata>
   <files>
-      <file src="smth/sdk.png" target="images/icon.png" />
-      <file src="smthandroid/README.md" target="" />
-      <file src="smthandroid/README.txt" target="" />
-      <file src="smthandroid/lib/net7.0-android33.0/**" target="lib/net7.0-android33.0" />
-	  <file src="smthandroid/lib/net8.0-android34.0/**" target="lib/net8.0-android34.0" />
-    </files>
+    <file src="smthandroid/build/NMSC.Android.targets" target="build" />
+    <file src="smthandroid/native/lib/android/**" target="native/lib/android" />
+    <file src="smth/sdk.png" target="images/icon.png" />
+    <file src="smthandroid/README.md" target="" />
+    <file src="smthandroid/README.txt" target="" />
+    <file src="smthandroid/lib/net7.0-android33.0/**" target="lib/net7.0-android33.0" />
+	<file src="smthandroid/lib/net8.0-android34.0/**" target="lib/net8.0-android34.0" />
+  </files>
 </package>

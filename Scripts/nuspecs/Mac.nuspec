@@ -20,10 +20,12 @@
     </dependencies>
   </metadata>
   <files>
-      <file src="smth/sdk.png" target="images/icon.png" />
-      <file src="smthmac/README.md" target="" />
-      <file src="smthmac/README.txt" target="" />
-      <file src="smthmac/lib/net7.0-maccatalyst16.1/**" target="lib/net7.0-maccatalyst16.1" />
-	  <file src="smthmac/lib/net8.0-maccatalyst17.2/**" target="lib/net8.0-maccatalyst17.2" />
-    </files>
+    <file src="smthmac/build/NMSC.Mac.targets" target="build" />
+    <file src="smthmac/native/lib/mac/**" target="native/lib/mac" />
+    <file src="smth/sdk.png" target="images/icon.png" />
+    <file src="smthmac/README.md" target="" />
+    <file src="smthmac/README.txt" target="" />
+    <file src="smthmac/lib/net7.0-maccatalyst16.1/**" target="lib/net7.0-maccatalyst16.1" />
+	<file src="smthmac/lib/net8.0-maccatalyst17.2/**" target="lib/net8.0-maccatalyst17.2" />
+  </files>
 </package>

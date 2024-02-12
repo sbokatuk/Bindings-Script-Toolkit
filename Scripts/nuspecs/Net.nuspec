@@ -22,14 +22,18 @@
     </dependencies>
   </metadata>
   <files>
-      <file src="smth/sdk.png" target="images/icon.png" />
-      <file src="smth/README.md" target="" />
-      <file src="smth/README.txt" target="" />
-      <file src="smthios/lib/net7.0-ios16.1/**" target="lib/net7.0-ios16.1" />
-	  <file src="smthios/lib/net8.0-ios17.2/**" target="lib/net8.0-ios17.2" />
-      <file src="smthmac/lib/net7.0-maccatalyst16.1/**" target="lib/net7.0-maccatalyst16.1" />
-	  <file src="smthmac/lib/net8.0-maccatalyst17.2/**" target="lib/net8.0-maccatalyst17.2" />
-      <file src="smthandroid/lib/net7.0-android33.0/**" target="lib/net7.0-android33.0" />
-	  <file src="smthandroid/lib/net8.0-android34.0/**" target="lib/net8.0-android34.0" />
-    </files>
+    <file src="smth/build/NMSC.targets" target="build" />
+    <file src="smth/sdk.png" target="images/icon.png" />
+    <file src="smth/README.md" target="" />
+    <file src="smth/README.txt" target="" />
+    <file src="smthios/native/lib/ios/**" target="native/lib/ios" />
+    <file src="smthios/lib/net7.0-ios16.1/**" target="lib/net7.0-ios16.1" />
+	<file src="smthios/lib/net8.0-ios17.2/**" target="lib/net8.0-ios17.2" />
+    <file src="smthmac/native/lib/mac/**" target="native/lib/mac" />
+    <file src="smthmac/lib/net7.0-maccatalyst16.1/**" target="lib/net7.0-maccatalyst16.1" />
+	<file src="smthmac/lib/net8.0-maccatalyst17.2/**" target="lib/net8.0-maccatalyst17.2" />
+    <file src="smthandroid/native/lib/android/**" target="native/lib/android" />
+    <file src="smthandroid/lib/net7.0-android33.0/**" target="lib/net7.0-android33.0" />
+	<file src="smthandroid/lib/net8.0-android34.0/**" target="lib/net8.0-android34.0" />
+  </files>
 </package>

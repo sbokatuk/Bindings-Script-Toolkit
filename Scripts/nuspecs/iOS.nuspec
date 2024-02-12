@@ -20,10 +20,12 @@
     </dependencies>
   </metadata>
   <files>
-      <file src="smth/sdk.png" target="images/icon.png" />
-      <file src="smthios/README.md" target="" />
-      <file src="smthios/README.txt" target="" />
-      <file src="smthios/lib/net7.0-ios16.1/**" target="lib/net7.0-ios16.1" />
-	  <file src="smthios/lib/net8.0-ios17.2/**" target="lib/net8.0-ios17.2" />
-    </files>
+    <file src="smthios/build/NMSC.iOS.targets" target="build" />
+    <file src="smthios/native/lib/ios/**" target="native/lib/ios" />
+    <file src="smth/sdk.png" target="images/icon.png" />
+    <file src="smthios/README.md" target="" />
+    <file src="smthios/README.txt" target="" />
+    <file src="smthios/lib/net7.0-ios16.1/**" target="lib/net7.0-ios16.1" />
+    <file src="smthios/lib/net8.0-ios17.2/**" target="lib/net8.0-ios17.2" />
+  </files>
 </package>
