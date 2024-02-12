@@ -67,13 +67,30 @@ cp -R smthmac/Readme.md smthmac/Readme.txt
 cp -R smthios/Readme.md smthios/Readme.txt
 cp -R smth/Readme.md smth/Readme.txt
 
-# mkdir Voice/native
-# mkdir Voice/native/lib
-# mkdir Voice/native/lib/ios
-# cp -R webrtc/lib/net8.0-android34.0/webrtc.aar webrtc/native/lib/android
-# 
-# rm webrtc/lib/net8.0-android34.0/webrtc.aar
-# rm webrtc/lib/net7.0-android33.0/webrtc.aar 
+mkdir smthios/native/
+mkdir smthios/native/lib
+mkdir smthios/native/lib/ios
+cp -R smthios/lib/net8.0-ios17.2/$NMSC.iOS.resources smthios/native/lib/ios
+
+rm -rf smthios/lib/net8.0-ios17.2/$NMSC.iOS.resources
+rm -rf smthios/lib/net7.0-ios16.1/$NMSC.iOS.resources
+
+mkdir smthmac/native
+mkdir smthmac/native/lib
+mkdir smthmac/native/lib/mac
+cp -R smthmac/lib/net8.0-maccatalyst17.2/$NMSC.Mac.resources smthmac/native/lib/mac
+
+rm -rf smthmac/lib/net8.0-maccatalyst17.2/$NMSC.Mac.resources
+rm -rf smthmac/lib/net7.0-maccatalyst16.1/$NMSC.Mac.resources
+
+mkdir smthandroid/native
+mkdir smthandroid/native/lib
+mkdir smthandroid/native/lib/android
+cp -R smthandroid/lib/net8.0-android34.0/*.aar smthandroid/native/lib/android
+
+rm ${smth}android/lib/net8.0-android34.0/*.aar
+rm ${smth}android/lib/net7.0-android33.0/*.aar 
+
 
 
 sed -E -i "" "s/<version>([0-9]{1,}\.)+[0-9]{1,}/<version>$ANDROIDVERSION.$BUILD/" NMSC.Android.nuspec
