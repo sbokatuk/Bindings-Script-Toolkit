@@ -147,8 +147,6 @@ rm -rf obj
 dotnet build $NMSC.Android.csproj -c Release -f net8.0-android --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 
 
-
-
 # if  [ -z "$3" ]
 # then
 # echo "package ready"
