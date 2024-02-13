@@ -18,9 +18,13 @@ else
 echo "$IOSVERSION" > Bindings/NMSC.iOS/Readme.md
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$IOSVERSION.7/" Bindings/NMSC.iOS/NMSC.iOS.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-ios/<TargetFramework>net7.0-ios/" Bindings/NMSC.iOS/NMSC.iOS.csproj
+rm -rf Bindings/$NMSC.iOS/bin
+rm -rf Bindings/$NMSC.iOS/obj
 dotnet pack Bindings/NMSC.iOS/NMSC.iOS.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$IOSVERSION.8/" Bindings/NMSC.iOS/NMSC.iOS.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-ios/<TargetFramework>net8.0-ios/" Bindings/NMSC.iOS/NMSC.iOS.csproj
+rm -rf Bindings/$NMSC.iOS/bin
+rm -rf Bindings/$NMSC.iOS/obj
 dotnet pack Bindings/NMSC.iOS/NMSC.iOS.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 cd NugetPackages
 rm -rf smthios
@@ -33,9 +37,13 @@ echo "ios part nugets generated"
 echo "$MACVERSION" > Bindings/NMSC.Mac/Readme.md
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$MACVERSION.7/" Bindings/NMSC.Mac/NMSC.Mac.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-maccatalyst/<TargetFramework>net7.0-maccatalyst/" Bindings/NMSC.Mac/NMSC.Mac.csproj
+rm -rf Bindings/$NMSC.Mac/bin
+rm -rf Bindings/$NMSC.Mac/obj
 dotnet pack Bindings/NMSC.Mac/NMSC.Mac.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$MACVERSION.8/" Bindings/NMSC.Mac/NMSC.Mac.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-maccatalyst/<TargetFramework>net8.0-maccatalyst/" Bindings/NMSC.Mac/NMSC.Mac.csproj
+rm -rf Bindings/$NMSC.Mac/bin
+rm -rf Bindings/$NMSC.Mac/obj
 dotnet pack Bindings/NMSC.Mac/NMSC.Mac.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 cd NugetPackages
 rm -rf smthmac
@@ -48,9 +56,13 @@ echo "mac part nugets generated"
 echo "$ANDROIDVERSION" > Bindings/NMSC.Android/Readme.md
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$ANDROIDVERSION.7/" Bindings/NMSC.Android/NMSC.Android.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-android/<TargetFramework>net7.0-android/" Bindings/NMSC.Android/NMSC.Android.csproj
+rm -rf Bindings/$NMSC.Android/bin
+rm -rf Bindings/$NMSC.Android/obj
 dotnet pack Bindings/NMSC.Android/NMSC.Android.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$ANDROIDVERSION.8/" Bindings/NMSC.Android/NMSC.Android.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-android/<TargetFramework>net8.0-android/" Bindings/NMSC.Android/NMSC.Android.csproj
+rm -rf Bindings/$NMSC.Android/bin
+rm -rf Bindings/$NMSC.Android/obj
 dotnet pack Bindings/NMSC.Android/NMSC.Android.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 cd NugetPackages
 rm -rf smthandroid

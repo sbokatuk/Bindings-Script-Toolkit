@@ -1,12 +1,20 @@
 #!/bin/sh
+for ARGUMENT in "$@"
+do
+   KEY=$(echo $ARGUMENT | cut -f1 -d=)
 
+   KEY_LENGTH=${#KEY}
+   VALUE="${ARGUMENT:$KEY_LENGTH+1}"
 
-if [ -z "$1" ]
+   export "$KEY"="$VALUE"
+done
+
+if [ -z "$TYPE" ]
 then
-echo "for cleaning add parameter"
+echo "for cleaning add TYPE parameter all/nuget/native/version"
 else
 
-if [[ "$1" == "all" ]]
+if [[ "$TYPE" == "all" ]]
 then
 rm -rf Bindings
 mkdir Bindings
@@ -17,19 +25,20 @@ mkdir Downloads
 rm -rf NugetPackages
 mkdir NugetPackages
 fi
-if [[ "$1" == "nuget" ]]
+if [[ "$TYPE" == "nuget" ]]
 then
 rm -rf NugetPackages/*.nupkg
 fi
-if [[ "$1" == "version" ]]
+if [[ "$TYPE" == "version" ]]
 then
-sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$2.nuspec
-sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$2.Mac.nuspec
-sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$2.Android.nuspec
-sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$2.iOS.nuspec
+
+sed -E -i "" "s=$OLD=$BUILD=" NugetPackages/$NMSC.nuspec
+sed -E -i "" "s=$OLD=$BUILD=" NugetPackages/$NMSC.Mac.nuspec
+sed -E -i "" "s=$OLD=$BUILD=" NugetPackages/$NMSC.Android.nuspec
+sed -E -i "" "s=$OLD=$BUILD=" NugetPackages/$NMSC.iOS.nuspec
 fi
 
-if [[ "$1" == "native" ]]
+if [[ "$TYPE" == "native" ]]
 then
 rm -rf Native
 mkdir Native

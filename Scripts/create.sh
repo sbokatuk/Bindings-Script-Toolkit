@@ -34,7 +34,7 @@ cp -R Scripts/nuspecs/$PLATFORM.nuspec NugetPackages/$NMSC.$PLATFORM.nuspec
 ./Scripts/replace.sh GITHUB="$GITHUB" NMSC="$NMSC" VENDOR="$VENDOR" DDD="$DDD" SITE="$SITE" smth="$smth" INFILE="NugetPackages/$NMSC.$PLATFORM.nuspec"
 
 mkdir Bindings/$NMSC.$PLATFORM
-cp -R Scripts/pgj/NMSC.$PLATFORM/* Bindings/$NMSC.$PLATFORM/
+cp -R Scripts/bindprojects/NMSC.$PLATFORM/* Bindings/$NMSC.$PLATFORM/
 
 mv Bindings/$NMSC.$PLATFORM/NMSC.$PLATFORM.csproj Bindings/$NMSC.$PLATFORM/$NMSC.$PLATFORM.csproj
 ./Scripts/replace.sh GITHUB="$GITHUB" NMSC="$NMSC" VENDOR="$VENDOR" DDD="$DDD" SITE="$SITE" smth="$smth" INFILE="Bindings/$NMSC.$PLATFORM/$NMSC.$PLATFORM.csproj"

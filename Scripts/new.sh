@@ -38,13 +38,37 @@ sed -E -i "" "s=smth=$smth=" NugetPackages/$NMSC.nuspec
 ./Scripts/create.sh GITHUB="$GITHUB" NMSC="$NMSC" VENDOR="$VENDOR" DDD="$DDD" SITE="$SITE" smth="$smth" PLATFORM="Mac"
 ./Scripts/create.sh GITHUB="$GITHUB" NMSC="$NMSC" VENDOR="$VENDOR" DDD="$DDD" SITE="$SITE" smth="$smth" PLATFORM="iOS"
 ./Scripts/create.sh GITHUB="$GITHUB" NMSC="$NMSC" VENDOR="$VENDOR" DDD="$DDD" SITE="$SITE" smth="$smth" PLATFORM="Android"
-cp -R Scripts/build.smth.sh Scripts/build.$smth.sh
-sed -E -i "" "s=NMSC=$NMSC=" Scripts/build.$smth.sh
-sed -E -i "" "s=smth=$smth=" Scripts/build.$smth.sh
-sed -E -i "" "s=NMSC=$NMSC=" Scripts/build.$smth.sh
-sed -E -i "" "s=smth=$smth=" Scripts/build.$smth.sh
-sed -E -i "" "s=NMSC=$NMSC=" Scripts/build.$smth.sh
-sed -E -i "" "s=smth=$smth=" Scripts/build.$smth.sh
+cp -R Scripts/build.smth.sh build.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" build.$smth.sh
+sed -E -i "" "s=smth=$smth=" build.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" build.$smth.sh
+sed -E -i "" "s=smth=$smth=" build.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" build.$smth.sh
+sed -E -i "" "s=smth=$smth=" build.$smth.sh
+
+cp -R Scripts/bind.smth.sh bind.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" bind.$smth.sh
+sed -E -i "" "s=smth=$smth=" bind.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" bind.$smth.sh
+sed -E -i "" "s=smth=$smth=" bind.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" bind.$smth.sh
+sed -E -i "" "s=smth=$smth=" bind.$smth.sh
+
+cp -R Scripts/load.smth.sh load.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" load.$smth.sh
+sed -E -i "" "s=smth=$smth=" load.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" load.$smth.sh
+sed -E -i "" "s=smth=$smth=" load.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" load.$smth.sh
+sed -E -i "" "s=smth=$smth=" load.$smth.sh
+
+cp -R Scripts/cleanup.smth.sh cleanup.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" cleanup.$smth.sh
+sed -E -i "" "s=smth=$smth=" cleanup.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" cleanup.$smth.sh
+sed -E -i "" "s=smth=$smth=" cleanup.$smth.sh
+sed -E -i "" "s=NMSC=$NMSC=" cleanup.$smth.sh
+sed -E -i "" "s=smth=$smth=" cleanup.$smth.sh
 
 ./Scripts/build.version.sh VERSION="$VERSION" IOSVERSION="$IOSVERSION" ANDROIDVERSION="$ANDROIDVERSION" BUILD="1-beta1" MACVERSION="$MACVERSION" NMSC="$NMSC" VENDOR="$VENDOR" smth="$smth"
 sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$NMSC.nuspec
