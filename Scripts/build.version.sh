@@ -110,6 +110,8 @@ sed -E -i "" "s/<version>([0-9]{1,}\.)+[0-9]{1,}/<version>$IOSVERSION.$BUILD/" $
 sed -E -i "" "s/<version>([0-9]{1,}\.)+[0-9]{1,}/<version>$MACVERSION.$BUILD/" $NMSC.Mac.nuspec
 sed -E -i "" "s/<version>([0-9]{1,}\.)+[0-9]{1,}/<version>$VERSION.$BUILD/" $NMSC.nuspec
 
+
+
 nuget pack $NMSC.Android.nuspec
 nuget pack $NMSC.iOS.nuspec
 nuget pack $NMSC.Mac.nuspec
@@ -118,6 +120,34 @@ nuget pack $NMSC.nuspec
 rm -rf ${smth}android
 rm -rf ${smth}ios
 rm -rf ${smth}mac
+cd ..
+sed -E -i "" "s/$NMSC.Android\" Version=\([0-9]{1,}\.)+[0-9]{1,}/$NMSC.Android\" Version=\$ANDROIDVERSION.$BUILD/" Samples/$NMSC/$NMSC.Android.csproj
+sed -E -i "" "s/$NMSC.iOS\" Version=\([0-9]{1,}\.)+[0-9]{1,}/$NMSC.iOS\" Version=\$IOSVERSION.$BUILD/" Samples/$NMSC/$NMSC.iOS.csproj
+sed -E -i "" "s/$NMSC.Mac\" Version=\([0-9]{1,}\.)+[0-9]{1,}/$NMSC.Mac\" Version=\$MACVERSION.$BUILD/" Samples/$NMSC/$NMSC.Mac.csproj
+sed -E -i "" "s/$NMSC\" Version=\"([0-9]{1,}\.)+[0-9]{1,}/$NMSC\" Version=\$VERSION.$BUILD/" Samples/$NMSC/$NMSC.csproj
+
+cd Samples/$NMSC
+rm -rf bin
+rm -rf obj
+dotnet build $NMSC.csproj -c Release -f net8.0-ios --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build $NMSC.csproj -c Release -f net8.0-maccatalyst --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build $NMSC.csproj -c Release -f net8.0-android --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build $NMSC.iOS.csproj -c Release -f net8.0-ios --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build $NMSC.Mac.csproj -c Release -f net8.0-maccatalyst --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build $NMSC.Android.csproj -c Release -f net8.0-android --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+
+
+
 
 # if  [ -z "$3" ]
 # then

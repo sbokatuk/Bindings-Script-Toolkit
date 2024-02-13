@@ -70,10 +70,45 @@ sed -E -i "" "s=smth=$smth=" cleanup.$smth.sh
 sed -E -i "" "s=NMSC=$NMSC=" cleanup.$smth.sh
 sed -E -i "" "s=smth=$smth=" cleanup.$smth.sh
 
+mkdir -p Samples/$NMSC
+cp -R Scripts/samples/NMSC Samples/$NMSC
+mv Samples/$NMSC/NMSC.csproj Samples/$NMSC/$NMSC.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.csproj
+
+mv Samples/$NMSC/NMSC.iOS.csproj Samples/$NMSC/$NMSC.iOS.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.iOS.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.iOS.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.iOS.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.iOS.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.iOS.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.iOS.csproj
+
+mv Samples/$NMSC/NMSC.Mac.csproj Samples/$NMSC/$NMSC.Mac.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.Mac.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.Mac.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.Mac.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.Mac.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.Mac.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.Mac.csproj
+
+mv Samples/$NMSC/NMSC.Android.csproj Samples/$NMSC/$NMSC.Android.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.Android.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.Android.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.Android.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.Android.csproj
+sed -E -i "" "s=NMSC=$NMSC=" Samples/$NMSC/$NMSC.Android.csproj
+sed -E -i "" "s=smth=$smth=" Samples/$NMSC/$NMSC.Android.csproj
+
 ./Scripts/build.version.sh VERSION="$VERSION" IOSVERSION="$IOSVERSION" ANDROIDVERSION="$ANDROIDVERSION" BUILD="1-beta1" MACVERSION="$MACVERSION" NMSC="$NMSC" VENDOR="$VENDOR" smth="$smth"
 sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$NMSC.nuspec
 sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$NMSC.Mac.nuspec
 sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$NMSC.Android.nuspec
 sed -E -i "" "s=1-beta1=$BUILD=" NugetPackages/$NMSC.iOS.nuspec
+
 ./Scripts/publish.sh $KEY
 

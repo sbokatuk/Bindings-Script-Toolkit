@@ -18,13 +18,13 @@ else
 echo "$IOSVERSION" > Bindings/NMSC.iOS/Readme.md
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$IOSVERSION.7/" Bindings/NMSC.iOS/NMSC.iOS.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-ios/<TargetFramework>net7.0-ios/" Bindings/NMSC.iOS/NMSC.iOS.csproj
-rm -rf Bindings/$NMSC.iOS/bin
-rm -rf Bindings/$NMSC.iOS/obj
+rm -rf Bindings/NMSC.iOS/bin
+rm -rf Bindings/NMSC.iOS/obj
 dotnet pack Bindings/NMSC.iOS/NMSC.iOS.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$IOSVERSION.8/" Bindings/NMSC.iOS/NMSC.iOS.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-ios/<TargetFramework>net8.0-ios/" Bindings/NMSC.iOS/NMSC.iOS.csproj
-rm -rf Bindings/$NMSC.iOS/bin
-rm -rf Bindings/$NMSC.iOS/obj
+rm -rf Bindings/NMSC.iOS/bin
+rm -rf Bindings/NMSC.iOS/obj
 dotnet pack Bindings/NMSC.iOS/NMSC.iOS.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 cd NugetPackages
 rm -rf smthios
@@ -37,13 +37,13 @@ echo "ios part nugets generated"
 echo "$MACVERSION" > Bindings/NMSC.Mac/Readme.md
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$MACVERSION.7/" Bindings/NMSC.Mac/NMSC.Mac.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-maccatalyst/<TargetFramework>net7.0-maccatalyst/" Bindings/NMSC.Mac/NMSC.Mac.csproj
-rm -rf Bindings/$NMSC.Mac/bin
-rm -rf Bindings/$NMSC.Mac/obj
+rm -rf Bindings/NMSC.Mac/bin
+rm -rf Bindings/NMSC.Mac/obj
 dotnet pack Bindings/NMSC.Mac/NMSC.Mac.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$MACVERSION.8/" Bindings/NMSC.Mac/NMSC.Mac.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-maccatalyst/<TargetFramework>net8.0-maccatalyst/" Bindings/NMSC.Mac/NMSC.Mac.csproj
-rm -rf Bindings/$NMSC.Mac/bin
-rm -rf Bindings/$NMSC.Mac/obj
+rm -rf Bindings/NMSC.Mac/bin
+rm -rf Bindings/NMSC.Mac/obj
 dotnet pack Bindings/NMSC.Mac/NMSC.Mac.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 cd NugetPackages
 rm -rf smthmac
@@ -56,13 +56,13 @@ echo "mac part nugets generated"
 echo "$ANDROIDVERSION" > Bindings/NMSC.Android/Readme.md
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$ANDROIDVERSION.7/" Bindings/NMSC.Android/NMSC.Android.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-android/<TargetFramework>net7.0-android/" Bindings/NMSC.Android/NMSC.Android.csproj
-rm -rf Bindings/$NMSC.Android/bin
-rm -rf Bindings/$NMSC.Android/obj
+rm -rf Bindings/NMSC.Android/bin
+rm -rf Bindings/NMSC.Android/obj
 dotnet pack Bindings/NMSC.Android/NMSC.Android.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 sed -E -i "" "s/<Version>([0-9]{1,}\.)+[0-9]{1,}/<Version>$ANDROIDVERSION.8/" Bindings/NMSC.Android/NMSC.Android.csproj
 sed -E -i "" "s/<TargetFramework>net([0-9]{1,}\.)+[0-9]{1,}-android/<TargetFramework>net8.0-android/" Bindings/NMSC.Android/NMSC.Android.csproj
-rm -rf Bindings/$NMSC.Android/bin
-rm -rf Bindings/$NMSC.Android/obj
+rm -rf Bindings/NMSC.Android/bin
+rm -rf Bindings/NMSC.Android/obj
 dotnet pack Bindings/NMSC.Android/NMSC.Android.csproj --output NugetPackages --force --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
 cd NugetPackages
 rm -rf smthandroid
@@ -82,18 +82,18 @@ cp -R smth/Readme.md smth/Readme.txt
 mkdir smthios/native/
 mkdir smthios/native/lib
 mkdir smthios/native/lib/ios
-cp -R smthios/lib/net8.0-ios17.2/$NMSC.iOS.resources smthios/native/lib/ios
+cp -R smthios/lib/net8.0-ios17.2/NMSC.iOS.resources smthios/native/lib/ios
 
-rm -rf smthios/lib/net8.0-ios17.2/$NMSC.iOS.resources
-rm -rf smthios/lib/net7.0-ios16.1/$NMSC.iOS.resources
+rm -rf smthios/lib/net8.0-ios17.2/NMSC.iOS.resources
+rm -rf smthios/lib/net7.0-ios16.1/NMSC.iOS.resources
 
 mkdir smthmac/native
 mkdir smthmac/native/lib
 mkdir smthmac/native/lib/mac
-cp -R smthmac/lib/net8.0-maccatalyst17.2/$NMSC.Mac.resources smthmac/native/lib/mac
+cp -R smthmac/lib/net8.0-maccatalyst17.2/NMSC.Mac.resources smthmac/native/lib/mac
 
-rm -rf smthmac/lib/net8.0-maccatalyst17.2/$NMSC.Mac.resources
-rm -rf smthmac/lib/net7.0-maccatalyst16.1/$NMSC.Mac.resources
+rm -rf smthmac/lib/net8.0-maccatalyst17.2/NMSC.Mac.resources
+rm -rf smthmac/lib/net7.0-maccatalyst16.1/NMSC.Mac.resources
 
 mkdir smthandroid/native
 mkdir smthandroid/native/lib
@@ -118,6 +118,33 @@ nuget pack NMSC.nuspec
 rm -rf smthandroid
 rm -rf smthios
 rm -rf smthmac
+
+cd ..
+sed -E -i "" "s/NMSC.Android\" Version=\([0-9]{1,}\.)+[0-9]{1,}/NMSC.Android\" Version=\$ANDROIDVERSION.$BUILD/" Samples/NMSC/NMSC.Android.csproj
+sed -E -i "" "s/NMSC.iOS\" Version=\([0-9]{1,}\.)+[0-9]{1,}/NMSC.iOS\" Version=\$IOSVERSION.$BUILD/" Samples/NMSC/NMSC.iOS.csproj
+sed -E -i "" "s/NMSC.Mac\" Version=\([0-9]{1,}\.)+[0-9]{1,}/NMSC.Mac\" Version=\$MACVERSION.$BUILD/" Samples/NMSC/NMSC.Mac.csproj
+sed -E -i "" "s/NMSC\" Version=\"([0-9]{1,}\.)+[0-9]{1,}/NMSC\" Version=\$VERSION.$BUILD/" Samples/NMSC/NMSC.csproj
+
+cd Samples/NMSC
+rm -rf bin
+rm -rf obj
+dotnet build NMSC.csproj -c Release -f net8.0-ios --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build NMSC.csproj -c Release -f net8.0-maccatalyst --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build NMSC.csproj -c Release -f net8.0-android --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build NMSC.iOS.csproj -c Release -f net8.0-ios --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build NMSC.Mac.csproj -c Release -f net8.0-maccatalyst --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+rm -rf bin
+rm -rf obj
+dotnet build NMSC.Android.csproj -c Release -f net8.0-android --verbosity quiet --property WarningLevel=0 /clp:ErrorsOnly
+
 
 # if  [ -z "$3" ]
 # then
