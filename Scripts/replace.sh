@@ -19,7 +19,15 @@ done
 # INFILE
 # ./Scripts/replace.sh GITHUB="https://github.com/sbokatuk/Net.Agora" NMSC="Net.Agora.Video" VENDOR="Agora" DDD="Video" SITE="https://www.agora.io/en/" smth="video"
 
-
+if [ -z "$GITHUB" ]
+then
+sed -E -i "" "s=NMSC=$NMSC=" $INFILE
+sed -E -i "" "s=smth=$smth=" $INFILE
+sed -E -i "" "s=NMSC=$NMSC=" $INFILE
+sed -E -i "" "s=smth=$smth=" $INFILE
+sed -E -i "" "s=NMSC=$NMSC=" $INFILE
+sed -E -i "" "s=smth=$smth=" $INFILE
+else
 sed -E -i "" "s=NMSC=$NMSC=" $INFILE
 sed -E -i "" "s=GITHUB=$GITHUB=" $INFILE
 sed -E -i "" "s=VENDOR=$VENDOR=" $INFILE
@@ -28,3 +36,4 @@ sed -E -i "" "s=VENDOR=$VENDOR=" $INFILE
 sed -E -i "" "s=DDD=$DDD=" $INFILE
 sed -E -i "" "s=SITE=$SITE=" $INFILE
 sed -E -i "" "s=smth=$smth=" $INFILE
+fi

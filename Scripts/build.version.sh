@@ -80,25 +80,19 @@ cp -R ${smth}mac/Readme.md ${smth}mac/Readme.txt
 cp -R ${smth}ios/Readme.md ${smth}ios/Readme.txt
 cp -R ${smth}/Readme.md ${smth}/Readme.txt
 
-mkdir ${smth}ios/native/
-mkdir ${smth}ios/native/lib
-mkdir ${smth}ios/native/lib/ios
+mkdir -p ${smth}ios/native/lib/ios
 cp -R ${smth}ios/lib/net8.0-ios17.2/$NMSC.iOS.resources ${smth}ios/native/lib/ios
 
 rm -rf ${smth}ios/lib/net8.0-ios17.2/$NMSC.iOS.resources
 rm -rf ${smth}ios/lib/net7.0-ios16.1/$NMSC.iOS.resources
 
-mkdir ${smth}mac/native
-mkdir ${smth}mac/native/lib
-mkdir ${smth}mac/native/lib/mac
+mkdir -p ${smth}mac/native/lib/mac
 cp -R ${smth}mac/lib/net8.0-maccatalyst17.2/$NMSC.Mac.resources ${smth}mac/native/lib/mac
 
 rm -rf ${smth}mac/lib/net8.0-maccatalyst17.2/$NMSC.Mac.resources
 rm -rf ${smth}mac/lib/net7.0-maccatalyst16.1/$NMSC.Mac.resources
 
-mkdir ${smth}android/native
-mkdir ${smth}android/native/lib
-mkdir ${smth}android/native/lib/android
+mkdir -p ${smth}android/native/lib/android
 cp -R ${smth}android/lib/net8.0-android34.0/*.aar ${smth}android/native/lib/android
 
 rm ${smth}android/lib/net8.0-android34.0/*.aar
